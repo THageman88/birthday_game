@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-    <h1> Welcome to the Birthday Game</h1>
-        <script src="" async defer></script>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block title %}Birthday Game {% endblock %}
+{% block content %}
+
+<h1> Welcome to the Birthday game!</h1>
+
+<p> Is this your first time playing or are you returning?</p>
+<a href= '/users/register'>This is my wirst time</a>
+<a href= '/users/login'> I've played before </a>
+
+{% endblock %}

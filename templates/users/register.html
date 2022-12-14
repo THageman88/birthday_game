@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Birthday Game {% endblock %}
+{% block content %}
+
+<h1> Holy shit Its your birthday!!</h1>
+<p1> Lets get you signed up </p1>
+
+<form action="">
+{% for field in form
+if field.widget.input_type !='hidden' %}
+<p> 
+{{field.label}} 
+{{field}}
+</p>
+
+{% endfor %}
+</form>
+
+{% endblock %}
