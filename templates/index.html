@@ -1,11 +1,17 @@
-{% extends "base.html" %}
-{% block title %}Birthday Game {% endblock %}
+{% extends 'base.html' %}
 {% block content %}
 
-<h1> Welcome to the Birthday game!</h1>
+<h1>Birthday Game</h1>
+<p>Register or Login to begin!</p>
 
-<p> Is this your first time playing or are you returning?</p>
-<a href= '/users/register'>This is my wirst time</a>
-<a href= '/users/login'> I've played before </a>
+<ul>
+  {% if 'user_id' not in session %}
+    <li><a href="/register"><button>Register</button></a></li>
+    <li><a href="/login"><button>Login</button></a></li>
+  {% endif %}
 
+  {% if 'user_id' in session %}
+    <a href="/logout"><button>Logout</button></a>
+  {% endif %}
+</ul>
 {% endblock %}

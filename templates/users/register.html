@@ -1,19 +1,28 @@
-{% extends "base.html" %}
-{% block title %}Birthday Game {% endblock %}
+{% extends 'base.html' %}
 {% block content %}
 
-<h1> Holy shit Its your birthday!!</h1>
-<p1> Lets get you signed up </p1>
+<h1>First Time?</h1>
+<div>
+<p>Lets Get You Registered!</p>
+</div>
+<form method="POST">
 
-<form action="">
-{% for field in form
-if field.widget.input_type !='hidden' %}
-<p> 
-{{field.label}} 
-{{field}}
-</p>
+  {{ form.hidden_tag() }}
 
-{% endfor %}
+  {% for field in form
+  if field.widget.input_type != 'hidden' %}
+  <p>
+    {{ field.label }}
+    {{ field }}
+
+    {% for error in field.errors %}
+    {{ error }}
+    {% endfor %}
+  </p>
+  {% endfor %}
+
+  <button type="submit" ><a href="/welcome">Register</a></button>
+
 </form>
 
 {% endblock %}
