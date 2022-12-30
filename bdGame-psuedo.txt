@@ -1,0 +1,28 @@
+birthday game psuedo
+
+-It should take the users name and birthday and return a birthday greeting-
+
+create a container that the program can switch functions inbetween (like pushing into an array)
+
+make a variable named user info  that gets user name and birthday with a query
+-write a function that takes the date and figuers out users birthday
+
+write a function that takes that user info and pushes it to the greeting
+
+push the greeting to the table cell
+
+
+
+creaete a class called game
+
+create a birthday form that asks random birthday questions, accepts user responses, and returns the question asked plus the answer
+
+create an array or object containing the birthday questions that are to be asked
+
+use math.floor and math.random to randomly pick question to be asked
+
+push random anwser up to table cell so user can anser.'
+
+take user answer and user anser and add them to a form
+
+user can answer 5 questions and then it should give them their answers, as well as the birthday greeting

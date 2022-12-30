@@ -72,7 +72,7 @@ def login():
 
 
 @app.route("/welcome")
-def secret():
+def logedin():
     """Example hidden page for logged-in users only."""
 
     if "user_id" not in session:
@@ -90,3 +90,11 @@ def logout():
     session.pop("user_id")
 
     return redirect("/")
+
+@app.route("/newgame")
+def newgame():
+    return render_template("/newgame.html")
+
+@app.route("/previousgames")
+def old_results():
+    return render_template("/previousgames.html")
