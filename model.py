@@ -29,8 +29,6 @@ class User(db.Model):
     password = db.Column(db.Text, 
                          nullable=False)
    
-    
-    
 
     # start_register
     @classmethod
@@ -61,3 +59,22 @@ class User(db.Model):
         else:
             return False
     # end_authenticate    
+    
+class Question_results(db.model):
+    """questionnaire"""
+    
+    __tablename__ = "question_results"
+     
+     
+    id = db.Column(db.Integer,
+                   primary_key=True,
+                   autoincrement = True)
+    
+    question_1 = db.Column(db.Text, nullable=True)
+    question_2 = db.Column(db.Text, nullable=True)
+    question_3 = db.Column(db.Text, nullable=True)
+    question_4 = db.Column(db.Text, nullable=True)
+    question_5 = db.Column(db.Text, nullable=True)
+    question_6 = db.Column(db.Text, nullable=True)
+    question_7 = db.Column(db.Text, nullable=True)
+    question_8 = db.Column(db.Text, nullable=True)
