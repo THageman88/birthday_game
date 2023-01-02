@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, session, flash
 from flask_debugtoolbar import DebugToolbarExtension
-from model import connect_db, db, User 
+from model import connect_db, db, User , Question_results
 from forms import RegisterForm, LoginForm , bdayForm
 
 app = Flask(__name__)
