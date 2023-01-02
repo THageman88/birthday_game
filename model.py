@@ -60,7 +60,7 @@ class User(db.Model):
             return False
     # end_authenticate    
     
-class Question_results(db.model):
+class Question_results(db.Model):
     """questionnaire"""
     
     __tablename__ = "question_results"
