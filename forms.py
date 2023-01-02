@@ -17,17 +17,17 @@ class LoginForm(FlaskForm):
     password = PasswordField("Password", validators=[InputRequired()])
     
 
-# class bdayForm(FlaskForm):
-#     """Bday Questions Form"""
+class bdayForm(FlaskForm):
+    """Bday Questions Form"""
     
-#     question_1 = StringField("What was your favorit food?")
-#     question_2 = StringField("Where was your favorite place that you visited?")
-#     question_3 = StringField("One thing in nature that humbled you?")
-#     question_4 = StringField("A new skill you attained?")
-#     question_5 = StringField("Something that you were proud of?")
-#     question_6 = StringField("A goal you worked hard to achieve?")
-#     question_7 = StringField("An animal friend that really stood out?")
-#     question_8 = StringField("New friend you made?")
+    question_1 = StringField("What was your favorit food?")
+    question_2 = StringField("Where was your favorite place that you visited?")
+    question_3 = StringField("One thing in nature that humbled you?")
+    question_4 = StringField("A new skill you attained?")
+    question_5 = StringField("Something that you were proud of?")
+    question_6 = StringField("A goal you worked hard to achieve?")
+    question_7 = StringField("An animal friend that really stood out?")
+    question_8 = StringField("New friend you made?")
     
     
     
