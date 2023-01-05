@@ -42,7 +42,7 @@ def register():
         session["user_id"] = user.id
 
         # on successful login, redirect to welcome page
-        return redirect("/welcome")
+        return redirect("/welcome.html")
 
     else:
         return render_template("users/register.html", form=form)
@@ -92,31 +92,13 @@ def logout():
 
     return redirect("/")
 
-@app.route("/newgame", methods=["GET","POST"])
+@app.route("/newgame", methods=['GET','POST'])
 def new_game():
-    
     form = bdayForm()
     
-    if form.validate_on_submit():
-
-        q1 = form.question_1.data
-        q2 = form.question_2.data
-        q3 = form.question_3.data
-        q4 = form.question_4.data
-        q5 = form.question_5.data
-        q6 = form.question_6.data
-        q7 = form.question_7.data
-        q8 = form.question_8.data
-        
-        question_results = Question_results(q1 , q2, q3 , q4 , q5, q6, q7, q8)
-        db.session.add(question_results)
-        db.session.commit()
-        
-        return render_template("/newgame.html")
+    return render_template("/newgame.html" , form=form)
     
-    else:
-        return redirect("/" , form=form)
-
+    
 @app.route("/previousgames")
 def old_results():
     return render_template("/previousgames.html")

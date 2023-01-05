@@ -65,7 +65,6 @@ class Question_results(db.Model):
     
     __tablename__ = "question_results"
      
-     
     id = db.Column(db.Integer,
                    primary_key=True,
                    autoincrement = True)

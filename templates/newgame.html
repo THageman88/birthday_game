@@ -1,13 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1> New Game </h1>
-<form action ="" method="POST">
-{% for field in form
-if field.widget.input_type != 'hidden' %}
-<p>
-{{field.label}}
-{{field}}
-</p>
-{% endfor %}
-<button>submit</button>
+<h1>Lets Play The Birthday Game</h1>
+<div>
+<div>
+<h2>In the last year...</h2>
+<form method="POST">
+
+  {{ form.hidden_tag() }}
+
+  {% for field in form
+  if field.widget.input_type != 'hidden' %}
+  <p>
+    {{ field.label }}
+    {{ field }}
+
+    {% for error in field.errors %}
+    {{ error }}
+    {% endfor %}
+  </p>
+  {% endfor %}
+
+  <button type="submit" ><a href="/welcome">Submit</a></button>
+
+</form>
+</div>
 {% endblock %}
