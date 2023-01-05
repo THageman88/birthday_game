@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, session, flash
+from flask import Flask, render_template, redirect, session, flash 
 from flask_debugtoolbar import DebugToolbarExtension
 from model import connect_db, db, User , Question_results
 from forms import RegisterForm, LoginForm , bdayForm
@@ -94,10 +94,17 @@ def logout():
 
 @app.route("/newgame", methods=['GET','POST'])
 def new_game():
+    """Renders form and handles answer input"""
     form = bdayForm()
+    if form.validate_on_submit():
+        return redirect('/success')
+    else:
+        return render_template("/newgame.html" , form=form)
     
-    return render_template("/newgame.html" , form=form)
-    
+@app.route("/success")
+def success_submission():
+    return render_template("/success.html")
+
     
 @app.route("/previousgames")
 def old_results():

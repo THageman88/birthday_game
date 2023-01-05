@@ -20,7 +20,7 @@ class LoginForm(FlaskForm):
 class bdayForm(FlaskForm):
     """Bday Questions Form"""
     
-    question_1 = StringField("What was your favorit food?")
+    question_1 = StringField("What was your favorite food?")
     question_2 = StringField("Where was your favorite place that you visited?")
     question_3 = StringField("One thing in nature that humbled you?")
     question_4 = StringField("A new skill you attained?")
