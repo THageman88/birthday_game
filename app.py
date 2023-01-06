@@ -97,6 +97,16 @@ def new_game():
     """Renders form and handles answer input"""
     form = bdayForm()
     if form.validate_on_submit():
+    
+        question_1 = form.question_1.data 
+        question_2 = form.question_2.data
+        question_3 = form.question_3.data
+        question_4 = form.question_4.data
+        question_5 = form.question_5.data
+        question_6 = form.question_6.data
+        question_7 = form.question_7.data
+        question_8 = form.question_8.data
+        
         return redirect('/success')
     else:
         return render_template("/newgame.html" , form=form)
@@ -106,6 +116,7 @@ def success_submission():
     return render_template("/success.html")
 
     
-@app.route("/previousgames")
+@app.route("/previousgames",methods=['GET'])
 def old_results():
+    results = Question_results.query.all
     return render_template("/previousgames.html")
