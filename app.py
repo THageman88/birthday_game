@@ -107,6 +107,18 @@ def new_game():
         question_7 = form.question_7.data
         question_8 = form.question_8.data
         
+        answers = Question_results(question_1=question_1 ,
+                                   question_2=question_2 ,
+                                   question_3=question_3,
+                                   question_4=question_4,
+                                   question_5=question_5,
+                                   question_6=question_6,
+                                   question_7=question_7,
+                                   question_8=question_8)
+        
+        db.session.add(answers)
+        db.session.commit()
+        
         return redirect('/success')
     else:
         return render_template("/newgame.html" , form=form)
@@ -118,5 +130,5 @@ def success_submission():
     
 @app.route("/previousgames",methods=['GET'])
 def old_results():
-    results = Question_results.query.all
+    res = Question_results.query.all
     return render_template("/previousgames.html")
