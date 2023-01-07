@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, session, flash
 from flask_debugtoolbar import DebugToolbarExtension
 from model import connect_db, db, User , Question_results
 from forms import RegisterForm, LoginForm , bdayForm
+import requests
 
 app = Flask(__name__)
 
@@ -9,6 +10,10 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql:///bdayGame"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SQLALCHEMY_ECHO"] = True
 app.config["SECRET_KEY"] = "ImGlutenFree"
+
+
+cat_pic = requests.get('https://api.thecatapi.com/v1/images/search?api_key=live_JEVI7m2hEzE9hbDB1Ob0N8syy13o7OT2YCXReRfjtc7qT9zmKE9qEKh7rK5uWWg9')
+cat_pic_data = cat_pic.json
 
 connect_db(app)
 
@@ -107,7 +112,7 @@ def new_game():
         question_7 = form.question_7.data
         question_8 = form.question_8.data
         
-        answers = Question_results(question_1=question_1 ,
+        question_results = Question_results(question_1=question_1 ,
                                    question_2=question_2 ,
                                    question_3=question_3,
                                    question_4=question_4,
@@ -116,7 +121,7 @@ def new_game():
                                    question_7=question_7,
                                    question_8=question_8)
         
-        db.session.add(answers)
+        db.session.add(question_results)
         db.session.commit()
         
         return redirect('/success')
@@ -125,10 +130,11 @@ def new_game():
     
 @app.route("/success")
 def success_submission():
+    
     return render_template("/success.html")
 
     
 @app.route("/previousgames",methods=['GET'])
 def old_results():
-    res = Question_results.query.all
-    return render_template("/previousgames.html")
+    res = Question_results.query.all()
+    return render_template("/previousgames.html", res=res)

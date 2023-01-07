@@ -7,14 +7,15 @@
 <th>Last year...</th>
 </thead>
 {% for res in results %}
-<td>{{result.answers.question_1}}</td>
-<td>{{result.answers.question_2}}</td>
-<td>{{result.answers.question_3}}</td>
-<td>{{result.answers.question_4}}</td>
-<td>{{result.answers.question_5}}</td>
-<td>{{result.answers.question_6}}</td>
-<td>{{result.answers.question_7}}</td>
-<td>{{result.answers.question_8}}</td>
-
+<ul>
+<td>{{results.question_1}}</td>
+<td>{{results.question_2}}</td>
+<td>{{results.question_3}}</td>
+<td>{{results.question_4}}</td>
+<td>{{results.question_5}}</td>
+<td>{{results.question_6}}</td>
+<td>{{results.question_7}}</td>
+<td>{{results.question_8}}</td>
+</ul>
 {% endfor %}
 {% endblock %}
