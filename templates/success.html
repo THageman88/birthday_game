@@ -2,5 +2,7 @@
 
 {% block content %}
 <h1>You have successfully completed the birthday game!</h1>
-{{cat_pic}}
+{% for datas in data %}
+<img src={{datas['url']}}>
+{% endfor %}
 {% endblock %}

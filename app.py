@@ -3,6 +3,7 @@ from flask_debugtoolbar import DebugToolbarExtension
 from model import connect_db, db, User , Question_results
 from forms import RegisterForm, LoginForm , bdayForm
 import requests
+import json
 
 app = Flask(__name__)
 
@@ -12,8 +13,6 @@ app.config["SQLALCHEMY_ECHO"] = True
 app.config["SECRET_KEY"] = "ImGlutenFree"
 
 
-cat_pic = requests.get('https://api.thecatapi.com/v1/images/search?api_key=live_JEVI7m2hEzE9hbDB1Ob0N8syy13o7OT2YCXReRfjtc7qT9zmKE9qEKh7rK5uWWg9')
-cat_pic_data = cat_pic.json
 
 connect_db(app)
 
@@ -128,10 +127,13 @@ def new_game():
     else:
         return render_template("/newgame.html" , form=form)
     
-@app.route("/success")
+@app.route("/success", methods=["GET"])
 def success_submission():
+
+    cat_pic = requests.get('https://api.thecatapi.com/v1/images/search?api_key=live_JEVI7m2hEzE9hbDB1Ob0N8syy13o7OT2YCXReRfjtc7qT9zmKE9qEKh7rK5uWWg9')
+    data=json.loads(cat_pic.content)
     
-    return render_template("/success.html")
+    return render_template("/success.html" , data=data)
 
     
 @app.route("/previousgames",methods=['GET'])
