@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
+<nav><a href="/logout">Log Out</a></nav>
 {% block content %}
+
 <h1>Previous years</h1>
 
-<table>
+<table class="table table-striped table-dark">
 <thead>
 <th>Last year...</th>
 </thead>
 {% for res in results %}
 <ul>
-<td>{{results.question_1}}</td>
-<td>{{results.question_2}}</td>
-<td>{{results.question_3}}</td>
-<td>{{results.question_4}}</td>
-<td>{{results.question_5}}</td>
-<td>{{results.question_6}}</td>
-<td>{{results.question_7}}</td>
-<td>{{results.question_8}}</td>
+<td scope="row">{{results.question_1}}</td>
+<td scope="row">{{results.question_2}}</td>
+<td scope="row">{{results.question_3}}</td>
+<td scope="row">{{results.question_4}}</td>
+<td scope="row">{{results.question_5}}</td>
+<td scope="row">{{results.question_6}}</td>
+<td scope="row">{{results.question_7}}</td>
+<td scope="row">{{results.question_8}}</td>
 </ul>
 {% endfor %}
 {% endblock %}

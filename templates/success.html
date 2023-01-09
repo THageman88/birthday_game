@@ -1,6 +1,7 @@
 {% extends 'base.html' %} 
 
 {% block content %}
+<nav><a href="/logout">Log Out</a></nav>
 <h1>You have successfully completed the birthday game!</h1>
 {% for datas in data %}
 <img src={{datas['url']}}>
