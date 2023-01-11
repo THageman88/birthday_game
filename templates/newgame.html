@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Lets Play The Birthday Game</h1>
-<div>
+<h2>
+Lets play the Birthday Game,
+  <small class="text-muted">and reflect</small>
+</h2>
 <br>
-<br>
-<h2>In the last year...</h2>
 
+<h2>In the last year...</h2>
 <form method="POST" class="form-control-sm">
 
   {{ form.hidden_tag() }}
