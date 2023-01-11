@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, session, flash 
-from flask_debugtoolbar import DebugToolbarExtension
+# from flask_debugtoolbar import DebugToolbarExtension
 from model import connect_db, db, User , Question_results
 from forms import RegisterForm, LoginForm , bdayForm
 import requests
@@ -13,13 +13,12 @@ app.config["SQLALCHEMY_ECHO"] = True
 app.config["SECRET_KEY"] = "ImGlutenFree"
 
 
-
 connect_db(app)
 
 with app.app_context():
     db.create_all()
 
-toolbar = DebugToolbarExtension(app)
+# toolbar = DebugToolbarExtension(app)
 
  
 @app.route("/")
@@ -36,6 +35,8 @@ def register():
     form = RegisterForm()
 
     if form.validate_on_submit():
+        
+        
         name = form.username.data
         pwd = form.password.data
 
@@ -78,7 +79,7 @@ def login():
 
 @app.route("/welcome")
 def logedin():
-    """Example hidden page for logged-in users only."""
+    """Welcome page"""
 
     if "user_id" not in session:
         flash("You must be logged in to play!")
@@ -138,5 +139,10 @@ def success_submission():
     
 @app.route("/previousgames",methods=['GET'])
 def old_results():
+    
     res = Question_results.query.all()
     return render_template("/previousgames.html", res=res)
+
+
+
+

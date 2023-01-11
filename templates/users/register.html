@@ -5,7 +5,7 @@
 <div>
 <p>Lets Get You Registered!</p>
 </div>
-<form method="POST">
+<form method="POST" class="col-sm-2 col-form-label">
 
   {{ form.hidden_tag() }}
 
@@ -21,7 +21,7 @@
   </p>
   {% endfor %}
 
-  <button type="submit" ><a href="/welcome">Register</a></button>
+  <button type="submit" btn btn-success><a href="/">Register</a></button>
 
 </form>
 

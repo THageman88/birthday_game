@@ -63,7 +63,7 @@ class User(db.Model):
 class Question_results(db.Model):
     """questionnaire"""
     
-    __tablename__ = "question_results"
+    __tablename__ = "Question_results"
      
     id = db.Column(db.Integer,
                    primary_key=True,
@@ -77,5 +77,3 @@ class Question_results(db.Model):
     question_6 = db.Column(db.Text, nullable=True)
     question_7 = db.Column(db.Text, nullable=True)
     question_8 = db.Column(db.Text, nullable=True)
-
-answers = db.relationship

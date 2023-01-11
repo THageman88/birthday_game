@@ -1,9 +1,14 @@
 {% extends 'base.html' %} 
 
 {% block content %}
-<nav><a href="/logout">Log Out</a></nav>
+
 <h1>You have successfully completed the birthday game!</h1>
 {% for datas in data %}
-<img src={{datas['url']}}>
+<div class="card" style="width: 25rem;">
+  <img src="{{datas['url']}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Birthday Kittens are awesome!!</p>
+  </div>
+</div>
 {% endfor %}
 {% endblock %}
