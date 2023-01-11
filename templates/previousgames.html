@@ -3,13 +3,12 @@
 {% block content %}
 
 <h1>Previous years</h1>
-
-
 <table class="table table-striped table-dark">
 <thead>
 
 <th>Last year...</th>
 </thead>
+
 {% for res in results %}
 <td scope="row">{{res.question_1}}</td>
 <td scope="row">{{res.question_2}}</td>
@@ -20,5 +19,6 @@
 <td scope="row">{{res.question_7}}</td>
 <td scope="row">{{res.question_8}}</td>
 
+</table>
 {% endfor %}
 {% endblock %}

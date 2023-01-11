@@ -141,8 +141,13 @@ def success_submission():
 def old_results():
     
     res = Question_results.query.all()
+    print(res)
+
     return render_template("/previousgames.html", res=res)
 
 
-
+def res():
+      res = Question_results.query.all()
+      
+      print(res)
 

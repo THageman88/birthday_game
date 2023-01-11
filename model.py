@@ -77,3 +77,9 @@ class Question_results(db.Model):
     question_6 = db.Column(db.Text, nullable=True)
     question_7 = db.Column(db.Text, nullable=True)
     question_8 = db.Column(db.Text, nullable=True)
+    
+    def try_this(cls, question_1, question_2, question_3, question_4, question_5, question_6, question_7, question_8):
+        res=Question_results.query
+        return(res)
+        
+        
