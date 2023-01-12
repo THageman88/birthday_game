@@ -149,5 +149,5 @@ def old_results():
 def res():
       res = Question_results.query.all()
       
-      print(res)
+      print(res )
 
